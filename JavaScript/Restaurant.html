@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(147, 237, 237, 0.751);
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #e7e8e7;
+            border-radius: 5px;
+            color: #fa7a03f9;
+            font-size: 15px;
+            font-weight: 600;
+            background-color: #f7f7f6f7;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #8b3333;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #fa7a03f9;
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #8c0456;
+            border: none;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2 style="color: #9c0763;">Restaurant Booking Form</h2>
+            <form id="bookForm">
+                <label for="bookChoice"> Choice of Booking : </label>
+                <select id="bookChoice" name="bookChoice" required>
+                    <option value="lunch"> Lunch </option>
+                    <option value="dinner"> Dinner </option>
+                </select>
+
+                <label for="bookChoice"> Food Type :</label>
+                <select id="bookChoice" name="bookChoice" required>
+                    <option value="lunch"> Vage </option>
+                    <option value="dinner"> Nonevage </option>
+                </select>
+
+                <label for="userName">User Name:</label>
+                <input type="text" id="userName" name="userName" required>
+
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber"
+                    pattern="[0-9]{10}" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="numberOfPersons">No of Person:</label>
+                <input type="number" id="numberOfPersons" name="numberOfPersons"
+                    required>
+
+                <label for="bookDate">Date:</label>
+                <input type="date" id="bookDate" name="bookDate" required>
+
+                <label for="bookTime">Time:</label>
+                <input type="time" id="bookTime" name="bookTime" required>
+
+                <label for="bookSlot">Slot:</label>
+                <input type="radio" id="slot1" name="bookSlot" value="slot1"
+                    required>
+                <label for="slot1">Slot 1 (6:00 PM - 7:30 PM)</label><br>
+                <input type="radio" id="slot2" name="bookSlot" value="slot2"
+                    required>
+                <label for="slot2">Slot 2 (8:00 PM - 9:30 PM)</label><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <script>
+        document.getElementById("bookForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            alert("Booking request submitted!!!");
+           
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .slot {
+            max-width: 500px;
+            height: 170px;
+            margin: 70px auto;
+            padding: 20px;
+            border: 3px solid rgb(4, 136, 118);
+            color: rgb(5, 119, 98);
+            background-color: rgba(183, 229, 218, 0.795);
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 550;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slot">
+        <h1>Booking Options</h1>
+
+        <label>Select Booking Option:</label>
+        <select id="bookingOption">
+            <option value="fullDay">Full Day</option>
+            <option value="halfDay">Half Day</option>
+        </select>
+
+        <div id="dateSection" style="display:none;">
+            <label>Select Date:</label>
+            <input type="date" id="selectedDate">
+        </div>
+
+        <div id="slotSection" style="display:none;">
+            <label>Select Slot:</label>
+            <select id="selectedSlot">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+        </div>
+
+        <button id="submitBtn">Submit</button>
+
+        <script>
+
+            const bookingOptionSelect = document.getElementById('bookingOption');
+            const dateSection = document.getElementById('dateSection');
+            const slotSection = document.getElementById('slotSection');
+            const submitBtn = document.getElementById('submitBtn');
+
+            bookingOptionSelect.addEventListener('change', function () {
+                if (bookingOptionSelect.value === 'halfDay') {
+                    dateSection.style.display = 'block';
+                    slotSection.style.display = 'block';
+                } else {
+                    dateSection.style.display = 'none';
+                    slotSection.style.display = 'none';
+                }
+            });
+
+            submitBtn.addEventListener('click', function () {
+                const selectedDate = document.getElementById('selectedDate').value;
+                const selectedSlot = document.getElementById('selectedSlot').value;
+
+                if (selectedDate && selectedSlot) {
+                    alert(`Booking Details:\nDate: ${selectedDate}\nSlot: ${selectedSlot}`);
+                } else {
+                    alert('Please select a date and slot.');
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>
